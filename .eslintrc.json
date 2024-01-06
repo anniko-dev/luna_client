@@ -1,3 +1,151 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": [
+    "next/core-web-vitals",
+    "plugin:react/recommended",
+    "airbnb",
+    "airbnb-typescript",
+    "prettier"
+  ],
+  "globals": {
+    "React": true,
+    "google": true,
+    "mount": true,
+    "mountWithRouter": true,
+    "shallow": true,
+    "shallowWithRouter": true,
+    "context": true,
+    "expect": true,
+    "jsdom": true,
+    "JSX": true
+  },
+  "parserOptions": {
+    "project": ["./tsconfig.json"]
+  },
+  "plugins": ["simple-import-sort"],
+  "rules": {
+    "simple-import-sort/imports": [
+      "error", {
+        "groups": [
+          [
+            "^react", "^\\{", "^(?:@|\\w)"
+          ],
+          [
+            "^(@|~|pages|modules|components)/"
+          ],
+          [
+            ".*utils.*", ".*enums.*" , ".*helpers.*", ".*hooks.*",
+            ".*constants.*", ".*mocks.*", ".*api.*",
+            ".*store.*", ".*common.*", ".*service.*", ".*const.*"
+          ],
+          [
+            ".*types$", ".*interfaces$"
+          ],
+          [
+            ".*font.*", "^.+\\.s?css$"
+          ],
+          [
+            "^.+\\.(png|jpe?g|gif|svg|webp)$", ".*icons.*"
+          ]
+        ]
+      }],
+    "dot-notation": "off",
+    "no-new": 0,
+    "no-shadow": "off",
+    "@typescript-eslint/no-shadow": "off",
+    "no-unused-expressions": "off",
+    "@typescript-eslint/no-unused-expressions": "off",
+    "jsx-a11y/tabindex-no-positive": "off",
+    "jsx-a11y/no-noninteractive-tabindex": "off",
+    "import/order": "off",
+    "import/no-cycle": "off",
+    "import/no-duplicates": "warn",
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": false,
+        "optionalDependencies": false,
+        "peerDependencies": false
+      }
+    ],
+    "import/extensions": [
+      "warn",
+      "ignorePackages",
+      {
+        "js": "never",
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never"
+      }
+    ],
+    "import/prefer-default-export": 0,
+    "no-plusplus": "off",
+    "no-unsafe-optional-chaining": "off",
+    "react/jsx-props-no-spreading": "off",
+    "react/destructuring-assignment": "off",
+    "react/no-unknown-property": "off",
+    "react/no-unstable-nested-components": "off",
+    "default-param-last": ["error"],
+    "react/prop-types": "off",
+    "jsx-quotes": ["error", "prefer-single"],
+    "quotes": [
+      2,
+      "single",
+      {
+        "avoidEscape": true,
+        "allowTemplateLiterals": true
+      }
+    ],
+    "react/react-in-jsx-scope": "off",
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [".js", ".jsx", "ts", ".tsx"]
+      }
+    ],
+    "react/function-component-definition": [
+      1,
+      {
+        "namedComponents": "arrow-function",
+        "unnamedComponents": "arrow-function"
+      }
+    ],
+    "no-param-reassign": "off",
+    "@typescript-eslint/no-unused-vars": [
+      "warn",
+      {
+        "args": "none"
+      }
+    ],
+    "no-unused-vars": [
+      "warn",
+      {
+        "args": "none"
+      }
+    ],
+    "arrow-body-style": ["warn", "as-needed"],
+    "linebreak-style": "off",
+    "jsx-a11y/label-has-associated-control": ["error", {
+      "required": {
+        "some": ["nesting", "id"]
+      }
+    }
+    ],
+    "jsx-a11y/no-static-element-interactions": "off",
+    "jsx-a11y/click-events-have-key-events": "off",
+    "jsx-a11y/control-has-associated-label": [ "error", {
+      "ignoreElements": [
+        "input",
+        "tr",
+        "th"
+      ]
+    }],
+    "jsx-a11y/label-has-for": ["error", {
+      "required": {
+        "some": ["nesting", "id"]
+      }
+    }],
+    "@typescript-eslint/ban-ts-comment": "off",
+    "@typescript-eslint/no-explicit-any": "off",
+    "react/require-default-props": "off"
+  }
 }
