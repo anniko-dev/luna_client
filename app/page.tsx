@@ -1,5 +1,5 @@
-import styles from './page.module.css'
+import React from 'react'
 
-export default function Home() {
-  return <main className={styles.main} />
-}
+const Page = () => <div>body</div>
+
+export default Page
